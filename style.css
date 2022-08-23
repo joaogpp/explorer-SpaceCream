@@ -9,7 +9,7 @@
   font-size: 62.5%;
 
   --ff-heading: 'Staatliches', cursive;
-  --ff-text: font-family: 'Palanquin', cursive;
+  --ff-text: 'Palanquin', cursive;
   --fs-heading: 4rem;
   --fs-text: 2rem; 
 
@@ -19,9 +19,7 @@
 }
 
 body {
-  
   background-color: var(--bgc-body);
-  
 }
 
 header {
@@ -45,14 +43,13 @@ header h1 {
   background-color: #CBC0D3;
 }
 
-main {
+.cards {
   padding: 0 3.2rem 6rem;
   margin: 0 auto;
 
   max-width: 32rem;
   display: grid;
   gap: 3.6rem;
-
 }
 
 main img {
@@ -60,13 +57,20 @@ main img {
   height: auto;
 }
 
-section p {
+.texto {
+  margin: 1.4rem auto 6.3rem;
+  max-width:32rem;
+
+  padding: 0 3.2rem;
+}
+
+p {
   margin: 1.4rem auto 2.7rem;
   
+  font-family: var(--ff-text);
   text-align: center;
-  font-family: 'Palanquin';
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Problema aqui na fonte*/
   line-height: 1.5rem;
   color: #23053A;
 
@@ -77,9 +81,31 @@ section p {
   position: relative;
 }
 
+.card img {
+  object-fit: cover;
+}
+
 .card h2 {
   position: absolute;
 
   top: 16px;
   right: 16px;
+
+  height: 3.5rem;
+  background: var(--bgc-balao);
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 2.4rem;
+
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: #4A4E69;
 }
