@@ -24,10 +24,15 @@ body {
 
 header {
   text-align: center;
-
+  
+  width: 100%;
+  min-height: 28rem;
+  height: 100%;
   background-color: var(--bgc-header);
-
-  padding: 3.2rem 0;
+}
+header img {
+  padding-top: 3.2rem;
+  padding-bottom: 4px;
 }
 
 header h1 {
@@ -38,42 +43,49 @@ header h1 {
   line-height: 3.4rem;
   letter-spacing: 0.05em;
 
-  margin-top: 4rem;
+  height: 4.9rem;
+  width: 100%;
+
   padding: 8px 0;
   background-color: #CBC0D3;
 }
 
-.cards {
-  display: grid;
-  gap: 3.6rem;
+header p {
+  display: none;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.2rem;
+
   max-width: 32rem;
   margin: 0 auto;
 }
 
-main img {
+.text-mobile { 
+    font-family: var(--ff-text);
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.8rem; /* Problema aqui na fonte*/
+    line-height: 1.5rem;
+    color: #23053A;
+  
+    height: 7.5rem;
+    width: 30.5rem;
+  
+    margin: 1.4rem 4rem 6.3rem;
+}
+
+.card img {
   width: 100%;
   height: auto;
-}
+  object-fit: cover;
+  margin-bottom: 3.2rem;
 
-.texto {
-  margin: 1.4rem auto 6.3rem;
-  padding: 0 3.2rem;
-}
-
-p {
-  margin: 1.4rem auto 2.7rem;
-  
-  font-family: var(--ff-text);
-  text-align: center;
-  font-weight: 400;
-  font-size: 1.5rem; /* Problema aqui na fonte*/
-  line-height: 1.5rem;
-  color: #23053A;
-
-  height: 7.5rem;
+  border-radius: 2rem;
 }
 
 .card { 
@@ -82,17 +94,15 @@ p {
   animation: downTop 700ms;
 }
 
-.card img {
-  object-fit: cover;
-}
-
 .card h2 {
   position: absolute;
 
-  top: 16px;
-  right: 16px;
+  top: 1.6rem;
+  right: 1.6rem;
 
   height: 3.5rem;
+  width: 11rem;
+
   background: var(--bgc-balao);
   border-radius: 20px;
 
@@ -111,6 +121,14 @@ p {
   color: #4A4E69;
 
   animation: topDown 1s forwards;
+}
+
+footer {
+  display: none;
+}
+
+main .card:nth-child(6), main .card:nth-child(7) {
+  display: none;
 }
 
 
@@ -138,13 +156,86 @@ p {
   }
 }
 
-@media (min-width: 700px) {
-  body{
+
+@media (min-width: 768px) {
+  .page {
     display: flex;
-    gap: 10rem;
   }
 
   header {
-    width: 37.7rem;
+    min-height: 100vh;
+    max-width: 37.7rem;
   }
+
+  header p {
+    display: flex;
+    align-items: center;
+
+    width: 27.5rem;
+    height: 26.2rem;
+
+    font-family: 'Roboto';
+    font-size: 2rem;
+    line-height: 2.5rem;
+
+    margin: 10rem auto 8rem;
+
+    color: #FFFFFF;
+  }
+
+  .text-mobile {
+    display: none;
+  }
+
+  main {
+    margin: 6.4rem auto 0;
+    display: grid;
+    gap: 3.2rem;
+    justify-content: center;
+
+    grid-template-areas: 
+    "A B E"
+    "D B F"
+    "D C F";
+  }
+
+  main .card:nth-child(2) {
+    grid-area: A;
+  }
+
+  main .card:nth-child(3) {
+    grid-area: B;
+  }
+
+  main .card:nth-child(4) {
+    grid-area: C;
+  }
+  main .card:nth-child(5) {
+    grid-area: D;
+  }
+
+  main .card:nth-child(6) {
+    grid-area: E;
+  }
+  main .card:nth-child(7) {
+    grid-area: F;
+  }
+
+  .card h2 {
+    display: none;
+  }
+
+  main .card:nth-child(6), main .card:nth-child(7) {
+    display: grid;
+  }
+
+  .card img {
+    height: auto;
+    object-fit: cover;
+    width: 22rem;
+    margin: 0;
+  }
+
+  
+
 }
