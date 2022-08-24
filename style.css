@@ -137,3 +137,14 @@ p {
     transform: translateY(15px);
   }
 }
+
+@media (min-width: 700px) {
+  body{
+    display: flex;
+    gap: 10rem;
+  }
+
+  header {
+    width: 37.7rem;
+  }
+}
