@@ -96,6 +96,10 @@ header p {
   animation: downTop 700ms;
 }
 
+.cards-wrapper .cardP, .cards-wrapper .cardU {
+  animation: downTop 700ms;
+}
+
 .card h2 {
   position: absolute;
 
@@ -157,6 +161,18 @@ footer {
   }
 }
 
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 @media (min-width: 768px) {
 
@@ -197,15 +213,27 @@ footer {
 @media (min-width: 1200px) {
   .page {
     display: flex;
+    gap: 10rem;
+   
+  }
+
+
+  main {
+    width: 100%;
   }
 
   header {
     min-height: 100vh;
-    max-width: 37.7rem;
+    min-width: 35rem;
+    max-width: 40rem;
   }
 
   header img {
-    margin-bottom: 3.2rem;
+    display: none;
+  }
+
+  header #deskImg {
+    display: inline;
   }
 
   header p {
@@ -233,22 +261,22 @@ footer {
     display: grid;
     gap: 3.2rem;
     grid-template-areas: 
-    "A B a"
+    "A B E"
     "D B F"
     "D C F";
   }
-  .cards-wrapper .card:nth-child(2) {
+  .cards-wrapper .card:nth-child(1) {
     grid-area: A;
   }
 
-  .cards-wrapper .card:nth-child(3) {
+  .cards-wrapper .card:nth-child(2) {
     grid-area: B;
   }
 
-  .cards-wrapper .card:nth-child(4) {
+  .cards-wrapper .card:nth-child(3) {
     grid-area: C;
   }
-  .cards-wrapper .card:nth-child(5) {
+  .cards-wrapper .card:nth-child(4) {
     grid-area: D;
   }
 
@@ -265,13 +293,28 @@ footer {
     display: none;
   }
 
-  .card img {
+  .card img, .cardP img, .cardU img {
     height: auto;
     object-fit: cover;  
-    width: 25rem;
+    width: 32rem;
     margin-bottom: 0;
   }
 
+
+  .contact {
+    margin: 0 auto;
+    display: block;
+    font-family: 'Roboto';
+    text-align: center; 
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: #4A4E69;
+    width: 59rem;
+  }
+
+  .contact a {
+    text-decoration: none;
+  }
   
 
 }
