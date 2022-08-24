@@ -58,7 +58,7 @@ header p {
   display: none;
 }
 
-main {
+.cards-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +78,7 @@ main {
     height: 7.5rem;
     width: 30.5rem;
   
-    margin: 1.4rem 4rem 6.3rem;
+    margin: 1.4rem auto 6.3rem;
 }
 
 .card img {
@@ -120,7 +120,7 @@ main {
 
   letter-spacing: 0.05em;
 
-  color: #4A4E69;
+  color:s #4A4E69;
 
   animation: topDown 1s forwards;
 }
@@ -129,10 +129,9 @@ footer {
   display: none;
 }
 
-main .card:nth-child(6), main .card:nth-child(7) {
+.cardP, .cardU {
   display: none;
 }
-
 
 @keyframes downTop {
   0% {
@@ -161,44 +160,38 @@ main .card:nth-child(6), main .card:nth-child(7) {
 
 @media (min-width: 768px) {
 
-  .card h2 {
-    display: none;
-  }
-  main {
-    position: relative;
+  .cards-wrapper {
     display: grid;
     gap: 3.2rem;
 
     grid-template-areas: 
-    "E E"
-    "C D"
-    "A B";
+    "A B"
+    "C D";
   }
 
-  main .card:nth-child(2) {
-    grid-area: A;
-  }
-
-  main .card:nth-child(3) {
+  .cards-wrapper .card:nth-child(2) {
     grid-area: C;
   }
 
-  main .card:nth-child(4) {
-    grid-area: B;
-  }
-  main .card:nth-child(5) {
-    grid-area: D;
+  .cards-wrapper .card:nth-child(3) {
+    grid-area: A;
   }
 
-  .text-mobile{
-    grid-area: E;
-    width: 40rem;
+  .cards-wrapper .card:nth-child(4) {
+    grid-area: D;
+  }
+  .cards-wrapper .card:nth-child(5) {
+    grid-area: B;
   }
 
   .card img {
     width: 32rem;
     height: auto;
   }  
+
+  .text-mobile {
+    width: 40rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -210,6 +203,7 @@ main .card:nth-child(6), main .card:nth-child(7) {
     min-height: 100vh;
     max-width: 37.7rem;
   }
+
   header img {
     margin-bottom: 3.2rem;
   }
@@ -234,45 +228,41 @@ main .card:nth-child(6), main .card:nth-child(7) {
     display: none;
   }
 
-  main {
-    margin: 6.4rem auto 5.4rem;
+  .cards-wrapper {
+    margin: 6.4rem 2rem 5.4rem;
     display: grid;
     gap: 3.2rem;
     grid-template-areas: 
-    "A B E"
+    "A B a"
     "D B F"
     "D C F";
   }
-
-
-  main .card:nth-child(2) {
+  .cards-wrapper .card:nth-child(2) {
     grid-area: A;
   }
 
-  main .card:nth-child(3) {
+  .cards-wrapper .card:nth-child(3) {
     grid-area: B;
   }
 
-  main .card:nth-child(4) {
+  .cards-wrapper .card:nth-child(4) {
     grid-area: C;
   }
-  main .card:nth-child(5) {
+  .cards-wrapper .card:nth-child(5) {
     grid-area: D;
   }
 
-  main .card:nth-child(6) {
+  .cardP {
     grid-area: E;
+    display: grid;
   }
-  main .card:nth-child(7) {
+  .cardU {
     grid-area: F;
+    display: grid;
   }
 
   .card h2 {
     display: none;
-  }
-
-  main .card:nth-child(6), main .card:nth-child(7) {
-    display: grid;
   }
 
   .card img {
