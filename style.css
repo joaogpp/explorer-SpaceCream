@@ -35,6 +35,10 @@ header img {
   padding-bottom: 4px;
 }
 
+header #deskImg {
+  display: none;
+}
+
 header h1 {
   color: white;
   font-family: var(--ff-heading);
@@ -158,6 +162,47 @@ main .card:nth-child(6), main .card:nth-child(7) {
 
 
 @media (min-width: 768px) {
+
+  .card h2 {
+    display: none;
+  }
+  main {
+    display: grid;
+    gap: 3.2rem;
+
+    grid-template-areas: 
+    "E E"
+    "A B"
+    "C D";
+  }
+
+  main .card:nth-child(2) {
+    grid-area: A;
+  }
+
+  main .card:nth-child(3) {
+    grid-area: C;
+  }
+
+  main .card:nth-child(4) {
+    grid-area: B;
+  }
+  main .card:nth-child(5) {
+    grid-area: D;
+  }
+
+  .text-mobile {
+    grid-area: E;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (min-width: 1200px) {
   .page {
     display: flex;
   }
@@ -165,6 +210,9 @@ main .card:nth-child(6), main .card:nth-child(7) {
   header {
     min-height: 100vh;
     max-width: 37.7rem;
+  }
+  header img {
+    margin-bottom: 3.2rem;
   }
 
   header p {
@@ -188,16 +236,15 @@ main .card:nth-child(6), main .card:nth-child(7) {
   }
 
   main {
-    margin: 6.4rem auto 0;
+    margin: 6.4rem auto 5.4rem;
     display: grid;
     gap: 3.2rem;
-    justify-content: center;
-
     grid-template-areas: 
     "A B E"
     "D B F"
     "D C F";
   }
+
 
   main .card:nth-child(2) {
     grid-area: A;
@@ -231,9 +278,9 @@ main .card:nth-child(6), main .card:nth-child(7) {
 
   .card img {
     height: auto;
-    object-fit: cover;
-    width: 22rem;
-    margin: 0;
+    object-fit: cover;  
+    width: 25rem;
+    margin-bottom: 0;
   }
 
   
