@@ -44,12 +44,13 @@ header h1 {
 }
 
 .cards {
-  padding: 0 3.2rem 6rem;
-  margin: 0 auto;
-
-  max-width: 32rem;
   display: grid;
   gap: 3.6rem;
+}
+
+main {
+  max-width: 32rem;
+  margin: 0 auto;
 }
 
 main img {
@@ -59,8 +60,6 @@ main img {
 
 .texto {
   margin: 1.4rem auto 6.3rem;
-  max-width:32rem;
-
   padding: 0 3.2rem;
 }
 
@@ -79,6 +78,8 @@ p {
 
 .card { 
   position: relative;
+
+  animation: downTop 700ms;
 }
 
 .card img {
@@ -108,4 +109,31 @@ p {
   letter-spacing: 0.05em;
 
   color: #4A4E69;
+
+  animation: topDown 1s forwards;
+}
+
+
+@keyframes downTop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(15px);
+  }
 }
