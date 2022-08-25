@@ -214,7 +214,7 @@ footer {
   .page {
     display: flex;
     gap: 10rem;
-   
+    max-width: 120rem;
   }
 
 
@@ -244,10 +244,10 @@ footer {
     height: 26.2rem;
 
     font-family: 'Roboto';
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
 
-    margin: 10rem auto 8rem;
+    margin: 6rem auto 8rem;
 
     color: #FFFFFF;
   }
@@ -296,7 +296,7 @@ footer {
   .card img, .cardP img, .cardU img {
     height: auto;
     object-fit: cover;  
-    width: 32rem;
+    width: 22rem;
     margin-bottom: 0;
   }
 
